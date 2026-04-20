@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-arch-black text-white font-sans antialiased min-h-screen overflow-x-hidden;
+    /* Dark background gradient to match the deep premium feel */
+    background: radial-gradient(circle at 50% 0%, #111114 0%, #050505 100%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .display-font {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .architect-card {
+    @apply bg-arch-card border border-arch-border rounded-2xl shadow-xl transition-all duration-300;
+  }
+  
+  .architect-card:hover {
+    @apply border-arch-purple/30 shadow-[0_10px_40px_rgba(147,51,234,0.05)];
+  }
+
+  .architect-input {
+    @apply bg-[#0a0a0c] border border-arch-border w-full rounded-[14px] px-5 py-4 text-white placeholder-gray-500 focus:border-arch-purple focus:outline-none focus:ring-1 focus:ring-arch-purple transition-all;
+  }
+
+  .architect-button {
+    @apply bg-transparent border border-arch-border text-white px-6 py-2.5 rounded-full hover:bg-arch-border transition-all font-medium text-sm uppercase tracking-widest;
+  }
+
+  .architect-button-primary {
+    @apply bg-arch-purple text-white px-8 py-3.5 rounded-[14px] hover:bg-arch-purpleDark hover:scale-[1.02] shadow-[0_0_20px_rgba(147,51,234,0.3)] transition-all font-medium text-sm block text-center;
+  }
+  
+  .metric-gradient {
+    background: linear-gradient(to right, #ffffff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
